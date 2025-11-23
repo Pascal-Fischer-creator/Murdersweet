@@ -155,11 +155,11 @@ header nav a {
 
 /* SECTION WIPES */
 .wipe-section {
-  height: 85vh;
+  height: auto;
   display: flex; 
   justify-content: center; 
   align-items: center;
-  padding: 0 7vw;
+  padding: 80px 7vw;
 }
 
 .wipe-dark { background: #050505; }
