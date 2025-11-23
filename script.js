@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateFrame = (frame) => {
       const padded = String(frame).padStart(2, '0');
-      img.src = `/${prefix}${padded}.${ext}`;
+      img.src = `${prefix}${padded}.${ext}`;   // ✅ FIXED PATH
     };
 
     const onDrag = (clientX) => {
