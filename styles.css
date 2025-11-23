@@ -19,7 +19,8 @@ body {
 /* HEADER */
 header {
   position: fixed;
-  top: 0; width: 100%;
+  top: 0; 
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 14px 7vw;
@@ -56,7 +57,8 @@ header nav a {
 .hero-media {
   position: absolute;
   inset: 0;
-  width: 100%; height: 100%;
+  width: 100%; 
+  height: 100%;
   object-fit: cover;
   filter: brightness(0.55);
 }
@@ -64,7 +66,8 @@ header nav a {
 /* HERO CONTENT */
 .hero-overlay {
   position: absolute;
-  top: 50%; left: 7vw;
+  top: 50%; 
+  left: 7vw;
   transform: translateY(-50%);
   max-width: 520px;
   z-index: 30;
@@ -119,12 +122,21 @@ header nav a {
   text-align: center;
 }
 
-.sachet-title { font-size: 2.6rem; }
-.sachet-sub { color: var(--muted); }
+.sachet-title { 
+  font-size: 2.6rem; 
+}
 
-.sachet-swiper { padding: 20px 0 60px; }
+.sachet-sub { 
+  color: var(--muted); 
+}
 
-.sachet-swiper .swiper-slide { width: 260px; }
+.sachet-swiper { 
+  padding: 20px 0 60px; 
+}
+
+.sachet-swiper .swiper-slide { 
+  width: 260px; 
+}
 
 .sachet-item img {
   width: 100%;
@@ -144,7 +156,9 @@ header nav a {
 /* SECTION WIPES */
 .wipe-section {
   height: 85vh;
-  display: flex; justify-content: center; align-items: center;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
   padding: 0 7vw;
 }
 
@@ -173,7 +187,8 @@ header nav a {
 
 /* FLAVOR GRID */
 .flavor-grid {
-  display: grid; gap: 22px;
+  display: grid; 
+  gap: 22px;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -204,7 +219,10 @@ footer {
   color: var(--muted);
 }
 
-/* SHOP PAGE STYLING */
+/* ======================================= */
+/* SHOP PAGE — FULLY CENTERED + CLEAN      */
+/* ======================================= */
+
 .shop-section {
   padding: 160px 7vw 120px;
   text-align: center;
@@ -213,25 +231,35 @@ footer {
 .shop-title {
   font-family: 'Bodoni Moda SC', serif;
   font-size: 2.6rem;
-  margin-bottom: 14px;
+  text-align: center;
+  margin: 0 auto 14px auto;
   font-weight: 700;
 }
 
 .shop-sub {
   max-width: 540px;
-  margin: 0 auto;
-  margin-bottom: 32px;
+  margin: 0 auto 32px auto;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.55;
   font-family: 'Bodoni Moda SC', serif;
+  text-align: center;
 }
 
 .shop-btn {
   margin-top: 14px;
   display: inline-block;
   font-family: 'Bodoni Moda SC', serif;
+  text-align: center;
 }
+
+/* Fix eyebrow alignment on shop page */
+.shop-section .eyebrow {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
 
 
 
