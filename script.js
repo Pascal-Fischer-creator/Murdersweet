@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  // ----------------------------------------------------
   // SCROLL REVEAL & WIPES
-  // ----------------------------------------------------
   const revealEls = document.querySelectorAll('.fade-in, .fade-slide-up, .scroll-reveal, .wipe-section');
   const scrollBg = document.querySelector('.scroll-bg-change');
 
@@ -17,51 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealEls.forEach(el => revealObserver.observe(el));
 
-
-
-  // ----------------------------------------------------
-  // LIQUID DEATH STYLE HERO SLIDER (Swiper Coverflow 3D)
-  // ----------------------------------------------------
-  const heroSwiper = new Swiper('.hero-swiper', {
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: 1.3,
-    spaceBetween: 40,
-    speed: 600,
-    grabCursor: true,
-
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 140,
-      modifier: 1.4,
-      scale: 0.9,
-      slideShadows: false
-    },
-
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false
-    },
-
-    breakpoints: {
-      768: {
-        slidesPerView: 2.3,
-        spaceBetween: 50
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 60
-      }
-    }
-  });
-
-
-
-  // ----------------------------------------------------
   // CTA background scroll change
-  // ----------------------------------------------------
   window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
       scrollBg.classList.add('scrolled');
@@ -70,25 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-
-  // ----------------------------------------------------
   // PARALLAX SACHETS
-  // ----------------------------------------------------
   const layers = document.querySelectorAll('.sachet-layer');
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     layers.forEach((layer, index) => {
-      const speed = (index + 1) * 0.15;
+      const speed = (index + 1) * 0.15; // different speed per layer
       layer.style.transform = `translateY(${scrollY * speed * -0.3}px)`;
     });
   });
 
-
-
-  // ----------------------------------------------------
-  // 360 PRODUCT ROTATOR
-  // ----------------------------------------------------
+  // 360 PRODUCT ROTATION
   const viewer = document.querySelector('.viewer360');
   if (viewer) {
     const img = viewer.querySelector('.viewer360-img');
@@ -100,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 1;
 
     const updateFrame = (frame) => {
-      const padded = String(frame).padStart(2, '0');
-      img.src = `/${prefix}${padded}.${ext}`;   // absolute root path (correct for custom domain)
+      const padded = String(frame).padStart(2, '0'); // 01, 02, ...
+      img.src = `${prefix}${padded}.${ext}`;
     };
 
     const onDrag = (clientX) => {
@@ -109,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const relativeX = clientX - rect.left;
       const percent = Math.min(Math.max(relativeX / rect.width, 0), 1);
       let frame = Math.floor(percent * totalFrames) + 1;
-      frame = Math.max(1, Math.min(frame, totalFrames));
+      if (frame < 1) frame = 1;
+      if (frame > totalFrames) frame = totalFrames;
       if (frame !== currentFrame) {
         currentFrame = frame;
         updateFrame(frame);
@@ -128,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
       onDrag(clientX);
     };
 
-    const endDrag = () => dragging = false;
+    const endDrag = () => {
+      dragging = false;
+    };
 
     viewer.addEventListener('mousedown', startDrag);
     viewer.addEventListener('mousemove', moveDrag);
@@ -139,11 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchend', endDrag);
   }
 
-
-
-  // ----------------------------------------------------
-  // FLAVOUR CARDS ACCENT COLOR
-  // ----------------------------------------------------
+  // FLAVOUR CARD DYNAMIC ACCENT COLOR
   const flavorCards = document.querySelectorAll('.flavor-card');
   flavorCards.forEach(card => {
     const color = card.dataset.color;
@@ -156,13 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-
-  // ----------------------------------------------------
   // EMAIL POPUP
-  // ----------------------------------------------------
   const popupOverlay = document.getElementById('email-popup');
   const closeBtn = document.querySelector('.popup-close');
+  const form = document.getElementById('popup-form');
 
   let popupShown = false;
 
@@ -172,17 +113,30 @@ document.addEventListener('DOMContentLoaded', () => {
     popupOverlay.classList.add('open');
   };
 
+  // Show after 7 seconds OR when user scrolls past 50% of page height
   setTimeout(showPopup, 7000);
 
   window.addEventListener('scroll', () => {
     const scrollPos = window.scrollY + window.innerHeight;
     const pageHeight = document.body.scrollHeight;
-    if (scrollPos / pageHeight > 0.5) showPopup();
+    if (scrollPos / pageHeight > 0.5) {
+      showPopup();
+    }
   });
 
   closeBtn.addEventListener('click', () => popupOverlay.classList.remove('open'));
   popupOverlay.addEventListener('click', (e) => {
-    if (e.target === popupOverlay) popupOverlay.classList.remove('open');
+    if (e.target === popupOverlay) {
+      popupOverlay.classList.remove('open');
+    }
   });
 
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('popup-email').value;
+    if (!email) return;
+    // Here you would normally send the email to your backend or a service like Mailchimp/Klaviyo
+    alert(`Thanks, rebel. We will notify: ${email}`);
+    popupOverlay.classList.remove('open');
+  });
 });
