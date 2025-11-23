@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bokor:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- FIXED: relative path -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Correct absolute path for GitHub Pages custom domain root -->
+  <link rel="stylesheet" href="/styles.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
@@ -24,16 +24,18 @@
     <a href="#hero">Home</a>
     <a href="#products">Pods</a>
     <a href="#sachets">Sachets</a>
-    <a href="shop.html">Shop</a>
+    <a href="/shop.html">Shop</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero section" id="hero">
   <video autoplay muted loop playsinline class="bg-video">
-    <!-- FIXED -->
-    <source src="hero-video.mp4" type="video/mp4">
+    <source src="/hero-video.mp4" type="video/mp4">
   </video>
+
   <div class="hero-gradient"></div>
+
   <div class="hero-content fade-in">
     <p class="eyebrow">Functional Nutrition • Zero Sugar • Zero Compromise</p>
     <h1>Bury Your Sugar Habits</h1>
@@ -42,11 +44,12 @@
     </p>
     <div class="hero-cta-row">
       <a href="#products" class="cta-btn primary">Enter the Fray</a>
-      <a href="shop.html" class="cta-btn ghost">View All Drops</a>
+      <a href="/shop.html" class="cta-btn ghost">View All Drops</a>
     </div>
   </div>
 </section>
 
+<!-- SWIPER -->
 <section class="rf-hero-slider section">
   <p class="eyebrow">Featured Pods</p>
   <h2 class="rf-hero-title">Choose Your Weapon</h2>
@@ -54,63 +57,26 @@
   <div class="swiper hero-swiper">
     <div class="swiper-wrapper">
 
-      <a class="swiper-slide hero-slide"><div class="hero-slide-inner">
-        <img src="sachet-layer1.png" class="hero-slide-img">
-        <h3>Berry Executioner</h3>
-        <p>Savage wild-berry pod with zero sugar.</p>
-        <span class="hero-pill">0 Sugar</span>
-      </div></a>
+      <a class="swiper-slide hero-slide">
+        <div class="hero-slide-inner">
+          <img src="/sachet-layer1.png" class="hero-slide-img">
+          <h3>Berry Executioner</h3>
+          <p>Savage wild-berry pod with zero sugar.</p>
+          <span class="hero-pill">0 Sugar</span>
+        </div>
+      </a>
 
-      <a class="swiper-slide hero-slide"><div class="hero-slide-inner">
-        <img src="sachet-layer2.png" class="hero-slide-img">
-        <h3>Matcha Reaper</h3>
-        <p>Clean green focus with long-burn energy.</p>
-        <span class="hero-pill">Focus</span>
-      </div></a>
+      <a class="swiper-slide hero-slide">
+        <div class="hero-slide-inner">
+          <img src="/sachet-layer2.png" class="hero-slide-img">
+          <h3>Matcha Reaper</h3>
+          <p>Clean green focus with long-burn energy.</p>
+          <span class="hero-pill">Focus</span>
+        </div>
+      </a>
 
-      <a class="swiper-slide hero-slide"><div class="hero-slide-inner">
-        <img src="sachet-layer3.png" class="hero-slide-img">
-        <h3>Cocoa Carnage</h3>
-        <p>Brutal cocoa flavour, no surrender to sugar.</p>
-        <span class="hero-pill">Recovery</span>
-      </div></a>
-
-      <a class="swiper-slide hero-slide"><div class="hero-slide-inner">
-        <img src="sachet-layer4.png" class="hero-slide-img">
-        <h3>Layer 4</h3>
-        <p>Zero sugar. Maximum chaos.</p>
-        <span class="hero-pill">Recovery</span>
-      </div></a>
-
-      <a class="swiper-slide hero-slide"><div class="hero-slide-inner">
-        <img src="sachet-layer5.png" class="hero-slide-img">
-        <h3>Layer 5</h3>
-        <p>Zero sugar. Maximum chaos.</p>
-        <span class="hero-pill">Recovery</span>
-      </div></a>
-
-      <a class="swiper-slide hero-slide"><div class="hero-slide-inner">
-        <img src="sachet-layer6.png" class="hero-slide-img">
-        <h3>Layer 6</h3>
-        <p>Zero sugar. Maximum chaos.</p>
-        <span class="hero-pill">Recovery</span>
-      </div></a>
-
-    </div>
-  </div>
-</section>
-
-<img src="product-360-01.png" class="viewer360-img">
-
-<footer>
-  <p>© 2025 Murder Sweet – Bury Your Sugar Habits.</p>
-</footer>
-
-<!-- FIXED -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script src="script.js"></script>
-
-</body>
-</html>
+      <a class="swiper-slide hero-slide">
+        <div class="hero-slide-inner">
+          <img src="/sachet-layer3.png"
 
 
