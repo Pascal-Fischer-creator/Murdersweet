@@ -17,6 +17,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script defer src="script.js"></script>
 </head>
+
 <body>
 
 <header id="header">
@@ -31,33 +32,33 @@
   </nav>
 </header>
 
-<!-- HERO — FULLSCREEN SWIPE CAROUSEL -->
-<section class="hero-swiper-container" id="hero">
+<!-- ======================= -->
+<!--     HERO SWIPE AREA     -->
+<!-- ======================= -->
+<section id="hero" class="hero-swiper-container">
+
+  <!-- SWIPER -->
   <div class="swiper hero-swiper">
     <div class="swiper-wrapper">
 
-      <!-- Slide 1 -->
       <div class="swiper-slide hero-slide">
         <video autoplay muted loop playsinline class="hero-media">
           <source src="hero-video.mp4" type="video/mp4">
         </video>
       </div>
 
-      <!-- Slide 2 -->
       <div class="swiper-slide hero-slide">
         <video autoplay muted loop playsinline class="hero-media">
           <source src="hero-video2.mp4" type="video/mp4">
         </video>
       </div>
 
-      <!-- Slide 3 -->
       <div class="swiper-slide hero-slide">
-        <img src="hero-image1.jpg" class="hero-media" alt="Hero Image 1">
+        <img src="hero-image1.jpg" class="hero-media" alt="">
       </div>
 
-      <!-- Slide 4 -->
       <div class="swiper-slide hero-slide">
-        <img src="hero-image2.jpg" class="hero-media" alt="Hero Image 2">
+        <img src="hero-image2.jpg" class="hero-media" alt="">
       </div>
 
     </div>
@@ -65,12 +66,15 @@
     <div class="swiper-pagination"></div>
   </div>
 
-  <!-- HERO TEXT OVERLAY -->
-  <div class="hero-overlay fade-in">
+  <!-- HERO CONTENT ALWAYS ON TOP -->
+  <div class="hero-overlay">
     <p class="eyebrow">Functional Nutrition • Zero Sugar • Zero Compromise</p>
+
     <h1>Bury Your Sugar Habits</h1>
+
     <p class="hero-copy">
       Rebel Fuel is weaponized nutrition for people who are done sipping sugar.
+      Pods built for focus, flavour and discipline – not fake wellness vibes.
     </p>
 
     <div class="hero-cta-row">
@@ -80,9 +84,12 @@
 
     <p class="hero-disclaimer">Not recommended for soft people.</p>
   </div>
+
 </section>
 
-<!-- SACHET SLIDER -->
+<!-- ======================= -->
+<!--   SACHET SLIDER (LD)   -->
+<!-- ======================= -->
 <section class="section sachet-slider" id="sachets">
   <p class="eyebrow">Sachets</p>
   <h2 class="sachet-title">Stacked To Attack</h2>
@@ -95,57 +102,54 @@
 
       <div class="swiper-slide">
         <div class="sachet-item">
-          <img src="sachet-layer1.png" alt="Sachet 1">
-          <h3>Berry Executioner</h3>
-          <p>Wild-berry carnage. Zero sugar.</p>
+          <img src="sachet-layer1.png">
+          <h3>Berry Executioner</h3><p>Wild-berry carnage.</p>
         </div>
       </div>
 
       <div class="swiper-slide">
         <div class="sachet-item">
-          <img src="sachet-layer2.png" alt="Sachet 2">
-          <h3>Matcha Reaper</h3>
-          <p>Long burn. No crash.</p>
+          <img src="sachet-layer2.png">
+          <h3>Matcha Reaper</h3><p>No crash.</p>
         </div>
       </div>
 
       <div class="swiper-slide">
         <div class="sachet-item">
-          <img src="sachet-layer3.png" alt="Sachet 3">
-          <h3>Cocoa Carnage</h3>
-          <p>Dessert without surrender.</p>
+          <img src="sachet-layer3.png">
+          <h3>Cocoa Carnage</h3><p>No sugar surrender.</p>
         </div>
       </div>
 
       <div class="swiper-slide">
         <div class="sachet-item">
-          <img src="sachet-layer4.png" alt="Sachet 4">
-          <h3>Tropical Havoc</h3>
-          <p>Pineapple-mango riot.</p>
+          <img src="sachet-layer4.png">
+          <h3>Tropical Havoc</h3><p>Pineapple-mango riot.</p>
         </div>
       </div>
 
       <div class="swiper-slide">
         <div class="sachet-item">
-          <img src="sachet-layer5.png" alt="Sachet 5">
-          <h3>Mint Obliterator</h3>
-          <p>Cold kill freshness.</p>
+          <img src="sachet-layer5.png">
+          <h3>Mint Obliterator</h3><p>Cold kill freshness.</p>
         </div>
       </div>
 
       <div class="swiper-slide">
         <div class="sachet-item">
-          <img src="sachet-layer6.png" alt="Sachet 6">
-          <h3>Peach Bloodbath</h3>
-          <p>Sweetness without sin.</p>
+          <img src="sachet-layer6.png">
+          <h3>Peach Bloodbath</h3><p>Sweetness without sin.</p>
         </div>
       </div>
 
     </div>
   </div>
+
 </section>
 
-<!-- SECTION WIPES -->
+<!-- ======================= -->
+<!--      SECTION WIPES      -->
+<!-- ======================= -->
 <section class="wipe-section wipe-dark">
   <div class="wipe-inner">
     <p class="eyebrow">Manifesto</p>
@@ -166,70 +170,47 @@
   <div class="wipe-inner">
     <p class="eyebrow">Sugar Is The Enemy</p>
     <h2>Rebel Fuel Is The Weapon.</h2>
-    <p>Shovel dirt on your old cravings.</p>
+    <p>Shovel dirt on your cravings.</p>
   </div>
 </section>
 
-<!-- PRODUCT SHOWCASE -->
-<section class="product-showcase section fade-slide-up" id="products">
+<!-- ======================= -->
+<!--     PRODUCT SECTION     -->
+<!-- ======================= -->
+<section class="product-showcase section" id="products">
   <p class="eyebrow">Pods</p>
   <h2>Featured Rogue Pods</h2>
   <p class="section-intro">Choose your weapon.</p>
 
   <div class="product-layout">
+
     <div class="product-360-container">
-      <div class="viewer360"
-        data-frames="24"
-        data-prefix="product-360-"
-        data-ext="png">
+      <div class="viewer360" data-frames="24" data-prefix="product-360-" data-ext="png">
         <img src="product-360-01.png" class="viewer360-img">
         <div class="viewer360-hint">Drag to inspect</div>
       </div>
-      <p class="viewer-caption">360° inspection. Zero sugar, full threat.</p>
     </div>
 
     <div class="flavor-grid">
-      <div class="flavor-card float-anim" data-color="#ff0033">
-        <h3>Berry Executioner</h3>
-        <p>Violent flavour, zero sugar.</p>
-        <div class="flavor-meta">
-          <span class="tag">Focus</span>
-          <span class="meta-pill">Sugar Dies Here</span>
-        </div>
+      <div class="flavor-card" data-color="#ff0033">
+        <h3>Berry Executioner</h3><p>Zero sugar.</p>
       </div>
-
-      <div class="flavor-card float-anim" data-color="#c3ff00">
-        <h3>Matcha Reaper</h3>
-        <p>Clean caffeine, long burn.</p>
-        <div class="flavor-meta">
-          <span class="tag">Energy</span>
-          <span class="meta-pill">Calm Power</span>
-        </div>
+      <div class="flavor-card" data-color="#c3ff00">
+        <h3>Matcha Reaper</h3><p>Long burn energy.</p>
       </div>
-
-      <div class="flavor-card float-anim" data-color="#ffaa00">
-        <h3>Cocoa Carnage</h3>
-        <p>Thick cocoa, zero guilt.</p>
-        <div class="flavor-meta">
-          <span class="tag">Recovery</span>
-          <span class="meta-pill">No Sugar</span>
-        </div>
+      <div class="flavor-card" data-color="#ffaa00">
+        <h3>Cocoa Carnage</h3><p>Thick, ruthless cocoa.</p>
       </div>
-
-      <div class="flavor-card float-anim" data-color="#00c4ff">
-        <h3>Tropical Havoc</h3>
-        <p>Pineapple mango riot.</p>
-        <div class="flavor-meta">
-          <span class="tag">Mood</span>
-          <span class="meta-pill">Limited Drop</span>
-        </div>
+      <div class="flavor-card" data-color="#00c4ff">
+        <h3>Tropical Havoc</h3><p>Limited drop.</p>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- CTA -->
-<section class="scroll-bg-change section" id="cta">
+<section class="scroll-bg-change section">
   <div class="cta-content">
     <p class="eyebrow">Next Move</p>
     <h2>Ready To Join The Rebels?</h2>
@@ -239,7 +220,7 @@
 </section>
 
 <footer>
-  <p>© 2025 Rebel Fuel – Bury Your Sugar Habits.</p>
+  <p>© 2025 Rebel Fuel – Bury Your Sugar Habits</p>
 </footer>
 
 </body>
