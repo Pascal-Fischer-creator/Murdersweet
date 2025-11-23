@@ -3,19 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
   /* HERO SWIPER */
   new Swiper('.hero-swiper', {
     loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
     effect: 'fade',
     fadeEffect: { crossFade: true },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
     pagination: {
       el: '.hero-swiper .swiper-pagination',
-      clickable: true,
-    },
+      clickable: true
+    }
   });
 
-  /* SACHET SLIDER (Liquid Death Style) */
+  /* SACHET LIQUID-DEATH SWIPER */
   new Swiper('.sachet-swiper', {
     slidesPerView: 'auto',
     centeredSlides: true,
@@ -23,10 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: true,
     grabCursor: true,
     speed: 500,
-    mousewheel: { forceToAxis: true }
   });
 
-  /* 360 PRODUCT VIEWER */
+  /* 360 VIEWER */
   const viewer = document.querySelector('.viewer360');
   if (viewer) {
     const img = viewer.querySelector('.viewer360-img');
@@ -37,23 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let dragging = false;
     let frame = 1;
 
-    const setFrame = (f) => {
-      const pad = String(f).padStart(2, '0');
-      img.src = `${prefix}${pad}.${ext}`;
+    const setFrame = f => {
+      img.src = `${prefix}${String(f).padStart(2,'0')}.${ext}`;
     };
 
-    viewer.addEventListener('mousedown', e => {
-      dragging = true;
-      update(e.clientX);
-    });
-
-    window.addEventListener('mouseup', () => { dragging = false; });
-
-    viewer.addEventListener('mousemove', e => {
-      if (dragging) update(e.clientX);
-    });
-
-    const update = (x) => {
+    const update = x => {
       const rect = viewer.getBoundingClientRect();
       const percent = (x - rect.left) / rect.width;
       let newFrame = Math.floor(percent * frames) + 1;
@@ -63,8 +50,31 @@ document.addEventListener('DOMContentLoaded', () => {
         setFrame(frame);
       }
     };
+
+    viewer.addEventListener('mousedown', e => {
+      dragging = true;
+      update(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => dragging = false);
+
+    viewer.addEventListener('mousemove', e => {
+      if (dragging) update(e.clientX);
+    });
+
+    viewer.addEventListener('touchstart', e => {
+      dragging = true;
+      update(e.touches[0].clientX);
+    }, { passive: true });
+
+    viewer.addEventListener('touchmove', e => {
+      if (dragging) update(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => dragging = false);
   }
 
 });
+
 
 
