@@ -173,31 +173,39 @@ header nav a {
 /* ========================================= */
 /* WIPE SECTIONS (SMALLER + CENTERED)        */
 /* ========================================= */
+/* ========================================= */
+/* IMPROVED WIPE SECTIONS — CENTERED + BIGGER */
+/* ========================================= */
+
 .wipe-section {
   width: 100%;
-  padding: 100px 7vw;
-  text-align: center;
+  padding: 140px 7vw;       /* more spacing, looks premium */
+  text-align: center !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .wipe-section h2 {
-  font-size: 2rem;
-  margin-bottom: 14px;
+  font-size: 3rem;          /* bigger heading */
+  margin-bottom: 20px;
+  line-height: 1.15;
+  font-weight: 700;
 }
 
 .wipe-section p {
-  color: inherit;
-  font-size: 1rem;
-  max-width: 620px;
+  font-size: 1.2rem;        /* bigger paragraph */
+  line-height: 1.7;
+  max-width: 680px;
   margin: 0 auto;
+  color: inherit;
 }
 
-/* Background colors */
+/* Background colors remain the same */
 .wipe-dark { background: #050505; }
 .wipe-light { background: #f5f5f5; color: #111; }
-.wipe-danger { background: var(--accent); }
+.wipe-danger { background: var(--accent); color: #fff; }
+
 
 /* ========================================= */
 /* PRODUCT SHOWCASE                          */
