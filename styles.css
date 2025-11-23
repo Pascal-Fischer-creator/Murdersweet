@@ -204,6 +204,36 @@ footer {
   color: var(--muted);
 }
 
+/* SHOP PAGE STYLING */
+.shop-section {
+  padding: 160px 7vw 120px;
+  text-align: center;
+}
+
+.shop-title {
+  font-family: 'Bodoni Moda SC', serif;
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.shop-sub {
+  max-width: 540px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  font-family: 'Bodoni Moda SC', serif;
+}
+
+.shop-btn {
+  margin-top: 14px;
+  display: inline-block;
+  font-family: 'Bodoni Moda SC', serif;
+}
+
+
 
 
 
